@@ -3,12 +3,7 @@ import requests
 import numpy as np
 from PIL import Image
 
-st.set_page_config(page_title="Test app about cats", layout="centered", page_icon="🐱")
-
-
-
-
-
+st.set_page_config(page_title="Test-app about cats", layout="centered", page_icon="🐱")
 
 def get_cat_fact():
     url_facts = "https://catfact.ninja/fact"
@@ -19,12 +14,6 @@ def get_cat_fact():
 @st.cache
 def get_cached_cat_fact():
     return get_cat_fact()
-
-
-
-
-
-
 
 @st.cache
 def get_image(query):
@@ -40,7 +29,7 @@ image = Image.open('raw_data/IMG_0032.jpg')
 
 st.markdown("### Did you know?")
 placeholder = st.empty()
-if st.checkbox('Keep facts cached', value=True):
+if st.checkbox('Keep facts cached', value=False):
     placeholder.markdown(f"**{get_cached_cat_fact()}**", unsafe_allow_html=True)
 else:
     placeholder.markdown(f"**{get_cat_fact()}**", unsafe_allow_html=True)

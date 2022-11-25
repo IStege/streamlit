@@ -3,6 +3,9 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
+st.set_page_config(page_title="Test-app main app", layout="centered", page_icon="🐱")
+
+
 st.markdown("""# This is a header
 ## This is a sub header
 ## etc
